@@ -18,10 +18,21 @@ app.get("/", function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
+// creates the reponse date JSON object
+function createDateJSON(date){
+     var dateJSON = {
+       "unix": date.getTime(),
+       "utc": date.toUTCString()
+     };
+  
+    return dateJSON;
+}
+
 // your first API endpoint... 
-app.get("/api/hello", function (req, res) {
+app.get("/api/timestamp/", function (req, res) {
   res.json({greeting: 'hello API'});
 });
+
 
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
