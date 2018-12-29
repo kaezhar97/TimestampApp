@@ -30,7 +30,8 @@ function createDateJSON(date){
 
 // your first API endpoint... 
 app.get("/api/timestamp/", function (req, res) {
-  res.json({greeting: 'hello API'});
+  Date d = new Date();
+  res.json(createDateJSON());
 });
 
 
