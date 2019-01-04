@@ -37,7 +37,7 @@ app.get("/api/timestamp/", function(req, res){
 app.get("/api/timestamp/:date_string", function (req, res) {
   var miliseconds = parseInt(req.params.date_string);
   if (miliseconds != NaN) {
-    var date = new Date();
+    var date = new Date(miliseconds);
   }
   else {
     var date = new Date(req.params.date_string);
